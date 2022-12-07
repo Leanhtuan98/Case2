@@ -70,11 +70,11 @@ public class User implements Serializable {
                 '}';
     }
 
-//    public void showAccount() {
-//        if (userName == null && passWord == null) {
-//            System.err.println("No account!");
-//        } else {
-//            System.out.printf("Account has: ",userName,passWord);
-//        }
-//    }
+    public void showAccount() {
+        if (userName == null && passWord == null) {
+            System.err.println("No account!");
+        } else {
+            System.out.printf("Account has: ",userName,passWord);
+        }
+    }
 }

@@ -107,12 +107,10 @@ public class Shirt implements Serializable {
 
     public void show() {
         if (size != null && brand != null) {
-            System.out.printf("%-10s%-20s%-15s%-15s%-20s%s", id, name, price, quantity, size.getSize(), brand.getName() + "\n");
+            System.out.printf("%-10d%-20s%-15.0f%-15d%-20s%-16s \n", id, name, price, quantity, size.getSize(), brand.getName());
         } else {
-            System.out.printf("%-10s%-20s%-15s%-15s%-20s%s", id, name, price, quantity, "nothing", "nothing" + "\n");
-
+            System.out.printf("%-10d%-20s%-15.0f%-15d%-20s%-16s \n", id, name, price, quantity, "nothing", "nothing" );
         }
-
     }
 }
 

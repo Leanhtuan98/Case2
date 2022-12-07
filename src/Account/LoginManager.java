@@ -1,7 +1,5 @@
 package Account;
 
-import Account.Role;
-import Account.User;
 import IOTextFile.IOTextFile;
 import Product.ShirtSystem;
 
@@ -12,10 +10,10 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class LoginManager implements Serializable {
-    static int IdUSer = -1;
+
     IOTextFile<User> ioTextFile = new IOTextFile<User>();
     public ArrayList<User> users;
-     ShirtSystem shirtSystem = new ShirtSystem();
+    ShirtSystem shirtSystem = new ShirtSystem();
 
 
     public LoginManager() {
@@ -189,7 +187,7 @@ public class LoginManager implements Serializable {
                         break;
                     }
                     break;
-                }
+                } 
             }
         } catch (InputMismatchException e) {
             System.out.println("Wrong account ! ");
@@ -208,6 +206,7 @@ public class LoginManager implements Serializable {
 //
 //
 //    }
+
 
 
 }

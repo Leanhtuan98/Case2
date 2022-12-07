@@ -1,6 +1,5 @@
 package Product;
 
-import Account.LoginManager;
 import Account.User;
 import IOTextFile.IOTextFile;
 
@@ -173,8 +172,9 @@ public class ShirtManager implements Serializable {
             System.err.println("No shirt!");
         } else {
             System.out.printf("%-10s%-20s%-15s%-15s%-20s%s", "ID", "Name", "Price", "Quantity", "Size", "Brand\n");
-            for (Shirt shirt : shirts)
-                shirt.show();
+            for (int i = 0; i < shirts.size(); i++) {
+                shirts.get(i).show();
+            }
         }
     }
 
@@ -209,15 +209,12 @@ public class ShirtManager implements Serializable {
             int id = Integer.parseInt(scanner.nextLine());
             System.out.println("Enter quantity you want buy: ");
             int quantity = Integer.parseInt(scanner.nextLine());
-
             for (Shirt shirt : shirts) {
                 if (shirt.getId() == id) {
                     if (shirt.getQuantity() > quantity) {
                         shirt.setQuantity(shirt.getQuantity() - quantity);
                         shirtIOTextFile.writeFile(shirts, "src/File/Storage.txt");
                         shirtUser.add(shirt);
-//                        users.get(id).getCart().add(id);
-
                         for (Shirt shirt1 : shirtUser) {
                             shirt1.setQuantity(quantity);
                         }
@@ -245,8 +242,6 @@ public class ShirtManager implements Serializable {
             System.out.printf("%-10s%-20s%-15s%-15s%-20s%s", "ID", "Name", "Price", "Quantity", "Size", "Brand\n");
             for (Shirt shirtBuy : shirtUser) {
                 shirtBuy.show();
-
-
             }
         }
     }
@@ -258,10 +253,10 @@ public class ShirtManager implements Serializable {
             sum += shirtBuy.getPrice();
         }
         System.out.println("---------------------------------------------------------------------------------");
-        System.out.printf("%-10s%-20s%-15s%-20s%s", "TOTAL: ", "", sum, "", "");
+        System.out.println( "Total:                               " + sum + "USD"  );
         shirtUser.clear();
         shirtIOTextFile.writeFile(shirtUser, "src/File/CartUser.txt");
-        System.out.println("Success Pay!");
+
     }
 
 

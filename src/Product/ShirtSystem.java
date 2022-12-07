@@ -40,7 +40,7 @@ public class ShirtSystem {
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
                 if (choice < 0 || choice >= 4) {
-                    System.out.println("No selection, Please re-enter");
+                    System.err.println("No selection, Please re-enter");
                 }
                 switch (choice) {
                     case 1:
@@ -56,7 +56,7 @@ public class ShirtSystem {
                         System.exit(0);
                 }
             } catch (Exception e) {
-                System.out.println("Please choice selection! ");
+                System.err.println("Please choice selection! ");
             }
         }
     }
@@ -75,7 +75,7 @@ public class ShirtSystem {
                 if (choice1 == 0) {
                     break;
                 } else if (choice1 >= 2 || choice1 < 0) {
-                    System.out.println("No selection, Please re-enter");
+                    System.err.println("No selection, Please re-enter");
                 }
                 switch (choice1) {
                     case 1:
@@ -83,7 +83,7 @@ public class ShirtSystem {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Please re-enter choice!");
+                System.err.println("Please re-enter choice!");
             }
         } while (true);
     }
@@ -100,10 +100,11 @@ public class ShirtSystem {
                 System.out.println("[3]. Delete by id.");
                 System.out.println("[4]. Update by id.");
                 System.out.println("[5]. Find product by name.");
+                System.out.println("[6]. Show account.");
                 System.out.println("[0]. Return.");
                 System.out.println("Enter your choice: ");
                 choice2 = Integer.parseInt(scanner.nextLine());
-                if (choice2 < 0 || choice2 >= 6) {
+                if (choice2 < 0 || choice2 >= 7) {
                     System.err.println("No selection, Please re-enter");
                 } else {
                     switch (choice2) {
@@ -122,8 +123,12 @@ public class ShirtSystem {
                         case 5:
                             shirtManager.findNameProduct();
                             break;
+                        case 0:
+                            return;
+                            
                     }
                 }
+
             } catch (Exception e) {
                 System.err.println("Please re-enter choice: ");
             }
@@ -136,20 +141,19 @@ public class ShirtSystem {
         int choice3;
         do {
             try {
-            System.out.println("                                   MENU USER                 ");
-            System.out.println("[1]. Buy Shirt");
-            System.out.println("[2]. View Cart");
-            System.out.println("[3]. View and pay Bill");
-            System.out.println("[0]. Back");
-            System.out.println("Enter your choice");
-
+                System.out.println("                                   MENU USER                 ");
+                System.out.println("[1]. Buy Shirt");
+                System.out.println("[2]. View Cart");
+                System.out.println("[3]. View and pay Bill");
+                System.out.println("[4]. Find name Product");
+                System.out.println("[0]. Back");
+                System.out.println("Enter your choice");
                 choice3 = Integer.parseInt(scanner.nextLine());
                 if (choice3 == 0) {
                     break;
-                } else if (choice3 < 0 || choice3 >= 4) {
+                } else if (choice3 < 0 || choice3 >= 5) {
                     System.err.println("No choice! ");
                 }
-
                 switch (choice3) {
                     case 1:
                         shirtManager.show();
@@ -161,10 +165,13 @@ public class ShirtSystem {
                     case 3:
                         shirtManager.payBill();
                         break;
+                    case 4:
+                        shirtManager.findNameProduct();
+                        break;
                 }
 
             } catch (Exception e) {
-                System.err.println("Please re-enter!");
+                System.out.println();
             }
         } while (true);
 
