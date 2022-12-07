@@ -56,7 +56,7 @@ public class ShirtSystem {
                         System.exit(0);
                 }
             } catch (Exception e) {
-                System.err.println("Please choice selection! ");
+                System.err.println("No selection, Please re-enter! ");
             }
         }
     }
@@ -171,7 +171,7 @@ public class ShirtSystem {
                 }
 
             } catch (Exception e) {
-                System.out.println();
+                System.err.println("No choice!");
             }
         } while (true);
 

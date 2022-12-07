@@ -35,7 +35,7 @@ public class LoginManager implements Serializable {
             boolean username1 = Pattern.matches("[0-9a-zA-Z]{6,31}", username);
             if (username1) break;
             else {
-                System.out.println("Wrong format!");
+                System.err.println("Wrong format!");
                 System.out.print("\nRe-Enter!");
                 scanner.nextLine();
             }
@@ -55,7 +55,7 @@ public class LoginManager implements Serializable {
             boolean password3 = Pattern.matches("[0-9a-zA-Z]*[a-zA-Z]+[0-9a-zA-Z]*", password);
             if (password1 && password2 && password3) break;
             else {
-                System.out.println("Wrong format!");
+                System.err.println("Wrong format!");
                 System.out.print("\nRe-Enter!");
                 scanner.nextLine();
             }
@@ -190,7 +190,7 @@ public class LoginManager implements Serializable {
                 } 
             }
         } catch (InputMismatchException e) {
-            System.out.println("Wrong account ! ");
+            System.err.println("Wrong account ! ");
 
         }
     }

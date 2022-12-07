@@ -121,7 +121,7 @@ public class ShirtManager implements Serializable {
         for (int i = 0; i < sizes.size(); i++) {
             System.out.println((i + 1) + "." + sizes.get(i).getSize());
         }
-        System.out.println("0. No choice!");
+        System.err.println("0. No choice!");
         int choice;
         try {
             do {
@@ -145,7 +145,7 @@ public class ShirtManager implements Serializable {
         for (int i = 0; i < brands.size(); i++) {
             System.out.println((i + 1) + "." + brands.get(i).getName());
         }
-        System.out.println("0. No choice!");
+        System.err.println("0. No choice!");
         int choice1;
         try {
             do {
